@@ -24,9 +24,29 @@
 
             <button class="btn btn-success" onclick="startGame()" id="start">Play Game</button>
             <br><br>
+            <button class="btn btn-success" onclick="reset()">Reset</button>
             <h3 id="status" class="btn btn-warning"></h3>
             <br><br>
             <div id="canvas"></div>
+            <h4 class="credits">
+              Developed by Aurum Rao
+            </h4>
+
+            <div id="myModal" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h3>Instructions</h3>
+                  </div>
+      
+                  <div class="modal-body">
+                    <h2 class="btn">To move up, move your nose up.</h2>
+                    <h2 class="btn">To move down, move your nose down.</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
         </center>
         <script src="main.js"></script>
     </body>
