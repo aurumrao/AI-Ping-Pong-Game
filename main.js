@@ -20,6 +20,9 @@ var ball = {
     dx:3,
     dy:3
 }
+x = "";
+y = "";
+score = "";
 
 function setup(){
   canvas =  createCanvas(700,600);
@@ -35,10 +38,25 @@ function modelLoaded(){
 	console.log("Model Loaded!");
 }
 
+function gotPoses(results)
+{
+	if(results.length > 0)
+	{
+	  x = results[0].pose.rightWrist.x;
+	  y = results[0].pose.rightWrist.y;
+    wristScore = results[0].pose.rightWrist.score;
+	}
+}
 
 function draw(){
 
  background(0); 
+
+ if(wristScore > 0.2){
+  fill("#ff0000");
+  stroke("#ff2222");
+  circle(x, y, 20);
+ }
 
  fill("black");
  stroke("black");
