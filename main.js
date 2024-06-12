@@ -23,6 +23,7 @@ var ball = {
 x = "";
 y = "";
 score = "";
+game_status = "";
 
 function setup(){
   canvas =  createCanvas(700,600);
@@ -48,8 +49,13 @@ function gotPoses(results)
 	}
 }
 
-function draw(){
+function startGame(){
+  game_status = "start";
+  document.getElementById("status").innerHTML = "Game is loaded";
+}
 
+function draw(){
+if(game_status == "start"){
  background(0); 
 
  if(wristScore > 0.2){
@@ -93,6 +99,7 @@ function draw(){
    
    //function move call which in very important
     move();
+}
 }
 
 
